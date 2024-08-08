@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> <title>Report Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="style.css" rel="stylesheet">
+  <style>
+    /* Basic Styles */
+    body {
+      font-family: Arial, sans-serif;
+     
+    }
+
+    .header {
+      background-color: #333;
+      color: white;
+    }
+
+    .logo-img {
+      height: 80px;
+    }
+
+    .partner-img {
+      height: 60px;
+      margin-left: 10px;
+    }
+
+    .text {
+      margin: 0;
+    }
+
+    .table-container {
+      background-color: #fff;
+    }
+
+    .procedure-table th {
+      background-color: #f8f9fa;
+    }
+
+    .procedure-table textarea {
+      height: 100px;
+    }
+
+    .input-data {
+      width: 100%;
+    }
+
+    .datauee {
+      text-align: center;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .header-left, .header-right {
+  flex: 1;
+}
+
+.header-right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header-left img, .header-right img {
+  margin-bottom: 10px;
+}
+
+.navbar-nav .dropdown-menu {
+  text-align: center;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.navbar-toggler {
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .header-left, .header-right {
+    justify-content: center;
+    background-color: #333;
+    color: white;
+  }
+
+}
+
+  </style>
+</head>
+<body>
+  <header class="header py-3">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <!-- Left Section -->
+      <div class="header-left d-flex flex-column flex-md-row align-items-center mb-3 mb-md-0 text-center text-md-left">
+        <img src="electrical.jpeg" alt="Logo" class="img-fluid logo-img" style="max-width: 150px;">
+        <div class="ms-3">
+          <p class="text mb-0">Electronicals and Electronics</p>
+          <p class="text mb-0">An ISO 9001:2005 Certified</p>
+        </div>
+      </div>
+  
+      <!-- Right Section -->
+      <div class="header-right d-flex flex-column flex-md-row align-items-center">
+        <img src="mms.jpg" alt="Image 1" class="img-fluid partner-img" style="max-width: 80px;">
+        <img src="EGAC.png" alt="Image 2" class="img-fluid partner-img" style="max-width: 80px;">
+        <img src="IAF.png" alt="Image 3" class="img-fluid partner-img" style="max-width: 80px;">
+        <img src="NABCB.png" alt="Image 4" class="img-fluid partner-img" style="max-width: 80px;">
+      </div>
+    </div>
+  
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <div class="container d-flex justify-content-end">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown me-2">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPages" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Pages
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownPages">
+                <li><a class="dropdown-item" href="index.html">Installation Form</a></li>
+                <li><a class="dropdown-item" href="index2.html">General Service Form</a></li>
+                <li><a class="dropdown-item" href="index3.html">Vehicle Owner Information Form</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownReport" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Report page
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownReport">
+                <li><a class="dropdown-item" href="report.html">Installation report</a></li>
+                <li><a class="dropdown-item" href="report2.html">General Service report</a></li>
+                <li><a class="dropdown-item" href="report3.html">Vehicle Owner Information report</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container my-5">
+    <!-- Existing Table -->
+    <table class="table table-bordered table-container">
+      <tbody>
+        <tr>
+          <td class="text-center" id="repNo">Loading...</td>
+          <td class="text-center"><u>INSTALLATION REPORT</u></td>
+          <td class="text-center">
+            <p id="reportDate">Loading...</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- New Table 1 -->
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td>
+            <div class="form-col">
+              <div class="form-group">
+                <div class="form-group-content">
+                  <label for="customerDetails" class="form-label">Customer Details:</label>
+                  <p id="customerDetails">Loading...</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-group-content">
+                  <label for="project" class="form-label">Project:</label>
+                  <p id="project">Loading...</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-group-content">
+                  <label for="poNoDate" class="form-label">P.O No. & Date:</label>
+                  <p id="poNoDate">Loading...</p>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="form-col">
+              <div class="form-group row">
+                <label for="vehicleModel" class="col-sm-6 col-form-label form-label">Vehicle Model:</label>
+                <div class="col-sm-6">
+                  <p id="vehicleModel">Loading...</p>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="vehicleSlNo" class="col-sm-6 col-form-label form-label">Vehicle SL No:</label>
+                <div class="col-sm-6">
+                  <p id="vehicleSlNo">Loading...</p>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="equipmentType" class="col-sm-6 col-form-label form-label">Type Of Equipment:</label>
+                <div class="col-sm-6">
+                  <p id="equipmentType">Loading...</p>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="installationHMR" class="col-sm-6 col-form-label form-label">Installation HMR:</label>
+                <div class="col-sm-6">
+                  <p id="installationHMR">Loading...</p>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="failureHMR" class="col-sm-6 col-form-label form-label">Failure HMR:</label>
+                <div class="col-sm-6">
+                  <p id="failureHMR">Loading...</p>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- New Table 2 (PROCEDURE) -->
+    <h4>Procedure</h4>
+    <table class="table table-bordered procedure-table">
+      <thead>
+        <tr>
+          <th>Serial Number</th>
+          <th>Input 1</th>
+          <th>Input 2</th>
+        </tr>
+      </thead>
+      <tbody id="procedureTableBody">
+        <!-- Data will be dynamically added here -->
+      </tbody>
+    </table>
+
+    <div class="form-group">
+      <label for="remarks">Remarks:</label>
+      <p id="remarks">Loading...</p>
+    </div>
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <div class="datauee mb-3 mb-md-0">
+        <p>For Uee:</p>
+        <p id="forUee">Loading...</p>
+      </div>
+      <div class="datauee">
+        <p>For Customer:</p>
+        <p id="forCustomer">Loading...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer bg-dark text-white py-4">
+    <div class="container text-center">
+      <p>Singapura Garden No.35 Neelasri Nilaya Lakshmipura Main Road, Jalahalli West,</p>
+      <p>Bengaluru Urban Karnataka 560015</p>
+      <p>Email: eande.universal@gmail.com, surajsk053@gmail.com Mob:+91 9640127499 8494900615</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Function to load form data from local storage and display on the report page
+    function loadFormData() {
+      const formData = JSON.parse(localStorage.getItem('formData'));
+
+      if (formData) {
+        document.getElementById('repNo').textContent = formData.repNo;
+        document.getElementById('reportDate').textContent = formData.reportDate;
+        document.getElementById('customerDetails').textContent = formData.customerDetails;
+        document.getElementById('project').textContent = formData.project;
+        document.getElementById('poNoDate').textContent = formData.poNoDate;
+        document.getElementById('vehicleModel').textContent = formData.vehicleModel;
+        document.getElementById('vehicleSlNo').textContent = formData.vehicleSlNo;
+        document.getElementById('equipmentType').textContent = formData.equipmentType;
+        document.getElementById('installationHMR').textContent = formData.installationHMR;
+        document.getElementById('failureHMR').textContent = formData.failureHMR;
+        document.getElementById('remarks').textContent = formData.remarks;
+        document.getElementById('forUee').textContent = formData.forUee;
+        document.getElementById('forCustomer').textContent = formData.forCustomer;
+
+        // Populate the procedure table
+        const procedureTableBody = document.getElementById('procedureTableBody');
+        formData.procedure.forEach((item, index) => {
+          let row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${item.serialNumber}</td>
+            <td>${item.input1}</td>
+            <td>
+              ${item.input2.map((input, i) => `
+                <input type="text" class="form-control mb-2" id="input2-${index}-${i}" value="${input}">
+              `).join('')}
+            </td>
+          `;
+          procedureTableBody.appendChild(row);
+        });
+      }
+    }
+
+    // Function to save form data to local storage
+    function saveFormData() {
+      const formData = {
+        repNo: document.getElementById('repNo').textContent,
+        reportDate: document.getElementById('reportDate').textContent,
+        customerDetails: document.getElementById('customerDetails').textContent,
+        project: document.getElementById('project').textContent,
+        poNoDate: document.getElementById('poNoDate').textContent,
+        vehicleModel: document.getElementById('vehicleModel').textContent,
+        vehicleSlNo: document.getElementById('vehicleSlNo').textContent,
+        equipmentType: document.getElementById('equipmentType').textContent,
+        installationHMR: document.getElementById('installationHMR').textContent,
+        failureHMR: document.getElementById('failureHMR').textContent,
+        remarks: document.getElementById('remarks').textContent,
+        forUee: document.getElementById('forUee').textContent,
+        forCustomer: document.getElementById('forCustomer').textContent,
+        procedure: []
+      };
+
+      const rows = document.querySelectorAll('#procedureTableBody tr');
+      rows.forEach((row, index) => {
+        const input1 = row.querySelector('td:nth-child(2)').textContent;
+        const input2 = Array.from(row.querySelectorAll(`input[id^="input2-${index}"]`)).map(input => input.value);
+        const serialNumber = row.querySelector('td:first-child').textContent; // Assuming the serial number is in the first cell
+
+        formData.procedure.push({ serialNumber, input1, input2 });
+      });
+
+      localStorage.setItem('formData', JSON.stringify(formData));
+    }
+
+    // Load form data when the page is loaded
+    document.addEventListener('DOMContentLoaded', loadFormData);
+
+    // Save form data when the page is about to unload
+    window.addEventListener('beforeunload', saveFormData);
+  </script>
+</body>
+</html>
